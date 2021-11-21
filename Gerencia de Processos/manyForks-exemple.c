@@ -20,6 +20,7 @@ int main(){
     filho1 = fork();
     if(!filho1){ //se for o filho
     implementacao_filho(&a);
+    printf("PID=%d - Valor de a=%d\n",getpid(), a);
     exit(0);
     }
     wait(NULL);
@@ -27,6 +28,7 @@ int main(){
         filho2 = fork();
         if(!filho2){//se for filho
         implementacao_filho2(&a);
+        printf("PID=%d - Valor de a=%d\n",getpid(), a);
         exit(0);
         }
     }
